@@ -3,351 +3,580 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bokiru - Chronologie du Maître</title>
+    <title>Guide MJ – La Route du Remède (Version étendue)</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Lato:wght@400;700&display=swap');
-
-        :root {
-            --bg-color: #1a1a2e;
-            --card-bg: #16213e;
-            --section-bg: #1f2a48;
-            --text-color: #e0e0e0;
-            --accent-color: #e94560;
-            --highlight: #0f3460;
-            --step-bg: #25335a;
-        }
-
         body {
-            font-family: 'Lato', sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-color);
+            font-family: 'Inter', sans-serif;
             margin: 0;
-            padding: 0;
-            padding-bottom: 50px;
-        }
-
-        /* Navigation */
-        nav {
-            position: sticky;
-            top: 0;
-            background: var(--card-bg);
-            border-bottom: 2px solid var(--accent-color);
-            z-index: 100;
-            padding: 10px;
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-        }
-
-        nav a {
-            color: #fff;
-            text-decoration: none;
-            font-family: 'Cinzel', serif;
-            font-weight: bold;
-            text-transform: uppercase;
-        }
-
-        nav a:hover {
-            color: var(--accent-color);
-        }
-
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
             padding: 20px;
+            background: #f5f5f5;
+            color: #333;
         }
 
         h1,
-        h2 {
-            font-family: 'Cinzel', serif;
-            color: var(--accent-color);
-            text-align: center;
-            margin-top: 40px;
+        h2,
+        h3 {
+            color: #2c3e50;
         }
 
-        .phase-box {
-            background: var(--section-bg);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 8px;
-            padding: 20px;
-            margin-bottom: 40px;
-        }
-
-        .timeline-step {
-            background: var(--step-bg);
-            margin: 15px 0;
+        .section {
+            background: #fff;
             padding: 15px;
-            border-left: 4px solid var(--accent-color);
-            border-radius: 4px;
-            position: relative;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
 
-        .step-title {
-            font-family: 'Cinzel', serif;
-            font-weight: bold;
-            color: #fff;
-            margin-bottom: 5px;
-            font-size: 1.1rem;
+        .city {
+            border-left: 4px solid #3498db;
+            padding-left: 10px;
         }
 
-        .step-desc {
-            color: #ccc;
-            font-size: 0.95rem;
+        .transition {
+            border-left: 4px solid #e67e22;
+            padding-left: 10px;
         }
 
-        .tag {
-            float: right;
-            font-size: 0.75rem;
-            padding: 2px 6px;
-            background: rgba(0, 0, 0, 0.3);
-            border-radius: 4px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
+        ul,
+        ol {
+            margin: 0;
+            padding-left: 20px;
         }
 
-        .mini-game {
-            background: rgba(233, 69, 96, 0.1);
-            border: 1px solid var(--accent-color);
-            padding: 10px;
-            margin-top: 10px;
-            font-size: 0.9rem;
-        }
-
-        .prologue-box {
-            background: #000;
-            padding: 20px;
+        .outcome {
+            margin-top: 5px;
             font-style: italic;
-            border: 1px solid #444;
-            margin-bottom: 40px;
-            text-align: justify;
-        }
-
-        /* Highlights */
-        strong {
-            color: #fff;
-        }
-
-        .success {
-            color: #4caf50;
-            font-weight: bold;
-        }
-
-        .fail {
-            color: #f44336;
-            font-weight: bold;
+            color: #555;
         }
     </style>
 </head>
 
 <body>
-
-    <nav>
-        <a href="#intro">Début</a>
-        <a href="#phase1">Forêt</a>
-        <a href="#phase2">Marais</a>
-        <a href="#phase3">Désert</a>
-        <a href="#phase4">Océan</a>
-        <a href="#final">Fin</a>
-    </nav>
-
-    <div class="container">
-
-        <h1 id="intro">La Route du Remède</h1>
-
-        <div class="prologue-box">
-            "Approchez, jeunes âmes... Le temps nous est compté. Regardez ce ciel, il saigne. La Malédiction Grakij ne
-            s'arrêtera pas. Elle prendra tout. À moins que vous n'acceptiez ce fardeau : portez ce Cristal à Port-Rouge.
-            Si vous échouez, il n'y aura personne pour pleurer notre chute."
-        </div>
-
-        <!-- PHASE 1 -->
-        <div id="phase1" class="phase-box">
-            <h2>Phase 1 : La Forêt de Fer</h2>
-            <p style="text-align:center; font-style:italic;">De Novum-Francis à Karta-Kara (Durée : 3 Jours)</p>
-
-            <div class="timeline-step">
-                <span class="tag">Départ</span>
-                <div class="step-title">1. Novum-Francis : L'Évasion</div>
-                <div class="step-desc">Le groupe doit sortir de la ville blanche, mais les portes sont bloquées par un
-                    Francis paranoïaque.</div>
-                <div class="mini-game">
-                    <strong>🎮 JEU : Le Code Francis</strong><br>
-                    Le MJ choisit un code secret (ex: 1492). Les joueurs ont 10 essais (Mastermind).<br>
-                    <em>Réussite :</em> Sortie sans bruit + 100 Crédits.
-                </div>
-            </div>
-
-            <div class="timeline-step">
-                <span class="tag">Jour 1</span>
-                <div class="step-title">2. L'Obstacle : Le Pont Effondré</div>
-                <div class="step-desc">Un ravin coupe la route. Les troncs sont en métal lourd.</div>
-                <div class="step-desc" style="margin-top:5px;">
-                    💡 <strong>Solution :</strong> Un <em>Cuckure</em> peut les faire léviter ou un <em>Jewpiguer</em>
-                    peut souder une passerelle.<br>
-                    <span class="fail">Échec :</span> Détour pénible (Fatigue).
-                </div>
-            </div>
-
-            <div class="timeline-step">
-                <span class="tag">Jour 2</span>
-                <div class="step-title">3. Le Combat : L'Ours-Oursin</div>
-                <div class="step-desc">Un ours couvert de piques rouillées attaque sur le sentier. Combat frontal
-                    brutal.</div>
-            </div>
-
-            <div class="timeline-step">
-                <span class="tag">Nuit 2</span>
-                <div class="step-title">4. Rencontre : Le Barde Menteur</div>
-                <div class="step-desc">Un voyageur partage le feu de camp. Il chante les exploits des PJ mais déforme
-                    tout.</div>
-                <div class="step-desc"><em>Objectif :</em> Roleplay détente. Il peut donner des infos sur la ville
-                    suivante.</div>
-            </div>
-        </div>
-
-        <!-- PHASE 2 -->
-        <div id="phase2" class="phase-box">
-            <h2>Phase 2 : Le Marais Toxique</h2>
-            <p style="text-align:center; font-style:italic;">De Karta-Kara à Céphalis (Durée : 2 Jours)</p>
-
-            <div class="timeline-step">
-                <span class="tag">Ville</span>
-                <div class="step-title">1. Karta-Kara : Le Dojo Fantôme</div>
-                <div class="step-desc">Le Maître du Dojo refuse le passage aux "faibles".</div>
-                <div class="mini-game">
-                    <strong>🎮 JEU : Duel de Regards</strong><br>
-                    Jeu de réflexe (tapoter la table au signal) ou lancer de dé le plus haut.<br>
-                    <em>Réussite :</em> Un Katana Ancestral est offert au guerrier du groupe.
-                </div>
-            </div>
-
-            <div class="timeline-step">
-                <span class="tag">Jour 1</span>
-                <div class="step-title">2. Danger : Nuage de Spores</div>
-                <div class="step-desc">Un brouillard vert et acide s'approche rapidement.</div>
-                <div class="step-desc" style="margin-top:5px;">
-                    💡 <strong>Solution :</strong> Un <em>Francis</em> doit analyser la toxine et créer un filtre avec
-                    des plantes locales.<br>
-                    <span class="fail">Échec :</span> Tous les joueurs perdent 5 PV (Poison).
-                </div>
-            </div>
-
-            <div class="timeline-step">
-                <span class="tag">Jour 2</span>
-                <div class="step-title">3. Le Boss : La Dame des Marais</div>
-                <div class="step-desc">Au milieu d'un lac de vase, une entité tente de noyer le groupe. Le terrain est
-                    difficile (boue).</div>
-            </div>
-        </div>
-
-        <!-- PHASE 3 -->
-        <div id="phase3" class="phase-box">
-            <h2>Phase 3 : Le Désert de Verre</h2>
-            <p style="text-align:center; font-style:italic;">De Céphalis à L'Usine-Mère (Durée : 4 Jours)</p>
-
-            <div class="timeline-step">
-                <span class="tag">Ville</span>
-                <div class="step-title">1. Céphalis : La Tour Céleste</div>
-                <div class="step-desc">Une noble détient la carte sûre pour le désert, mais elle aime jouer.</div>
-                <div class="mini-game">
-                    <strong>🎮 JEU : Le Mensonge Doré</strong><br>
-                    Le MJ raconte 3 histoires (2 fausses, 1 vraie). Les joueurs doivent trouver la vraie.<br>
-                    <em>Réussite :</em> Carte du Désert (Évite l'étape 3).
-                </div>
-            </div>
-
-            <div class="timeline-step">
-                <span class="tag">Jour 2</span>
-                <div class="step-title">2. Survie : La Soif Magique</div>
-                <div class="step-desc">La chaleur (50°C) évapore l'eau des gourdes instantanément.</div>
-                <div class="step-desc">
-                    💡 <strong>Solution :</strong> <em>Francis</em> condense l'air avec un gadget ou <em>Jewpiguer</em>
-                    crée un frigo portatif.
-                </div>
-            </div>
-
-            <div class="timeline-step">
-                <span class="tag">Jour 3</span>
-                <div class="step-title">3. Embuscade : La Sirène des Sables</div>
-                <div class="step-desc">Si les joueurs n'ont pas la Carte, ils tombent dans un piège de sables mouvants
-                    avec un monstre en dessous.</div>
-            </div>
-
-            <div class="timeline-step">
-                <span class="tag">Jour 4</span>
-                <div class="step-title">4. Mystère : Le Mirage Temporel</div>
-                <div class="step-desc">Vision d'une bataille antique. Les joueurs voient des guerriers fantômes. Pas de
-                    combat, juste de l'ambiance.</div>
-            </div>
-        </div>
-
-        <!-- PHASE 4 -->
-        <div id="phase4" class="phase-box">
-            <h2>Phase 4 : L'Océan Acide</h2>
-            <p style="text-align:center; font-style:italic;">De L'Usine-Mère à Port-Rouge (Durée : 3 Jours)</p>
-
-            <div class="timeline-step">
-                <span class="tag">Ville</span>
-                <div class="step-title">1. L'Usine-Mère : Réparations</div>
-                <div class="step-desc">Le bateau blindé a besoin d'un réglage moteur par l'Unité 734.</div>
-                <div class="mini-game">
-                    <strong>🎮 JEU : La Tour Instable</strong><br>
-                    Empiler 10 dés/objets en 1 minute sans que ça tombe (Dextérité).<br>
-                    <em>Réussite :</em> Moteur Turbo (Arrivée plus rapide).
-                </div>
-            </div>
-
-            <div class="timeline-step">
-                <span class="tag">Jour 1</span>
-                <div class="step-title">2. Alerte : Brèche dans la Coque</div>
-                <div class="step-desc">L'acide ronge le métal ! L'eau monte.</div>
-                <div class="step-desc">
-                    💡 <strong>Solution :</strong> <em>Jewpiguer</em> colmate la brèche instantanément ou
-                    <em>Cuckure</em> repousse l'eau.
-                </div>
-            </div>
-
-            <div class="timeline-step">
-                <span class="tag">Jour 2</span>
-                <div class="step-title">3. Combat Naval : Pirates Mutants</div>
-                <div class="step-desc">Abordage ! Des pirates sautent sur le pont.</div>
-                <div class="step-desc">
-                    💡 <strong>Héroïsme :</strong> Un <em>Lamuisante</em> peut défier le capitaine en duel singulier
-                    pour stopper l'assaut immédiatement.
-                </div>
-            </div>
-
-            <div class="timeline-step">
-                <span class="tag">Jour 3</span>
-                <div class="step-title">4. Le Léviathan : Kraken Mécanique</div>
-                <div class="step-desc">L'ultime obstacle avant le port. Un combat titanesque contre des tentacules
-                    d'acier.</div>
-            </div>
-        </div>
-
-        <!-- FINAL -->
-        <div id="final" class="phase-box" style="border-color: var(--accent-color);">
-            <h2>🏁 Le Final : Port-Rouge</h2>
-            <div class="timeline-step">
-                <div class="step-title">1. Retrouvailles : Serge "L'Ancre"</div>
-                <div class="step-desc">À la taverne, le chef de la résistance teste votre chance.</div>
-                <div class="mini-game">
-                    <strong>🎮 JEU : Le 421 Pirate</strong><br>
-                    Lancer les dés pour faire 4-2-1. Trois essais.<br>
-                    <em>Réussite :</em> Aide militaire pour la bataille.
-                </div>
-            </div>
-            <div class="timeline-step">
-                <div class="step-title">2. L'ULTIME BATAILLE</div>
-                <div class="step-desc">Contre l'Avatar du Grakij au Cœur du Monde. Utilisez l'Artefact pour gagner.
-                </div>
-            </div>
-        </div>
-
+    <h1>Guide du Maître du Jeu – La Route du Remède (Version étendue)</h1>
+    <div class="section">
+        <h2>Résumé du scénario (≈ 1 heure)</h2>
+        <p>Les PJ transportent le <strong>Crystal du Dernier Souffle</strong> de <em>Novum‑Francis</em> à
+            <em>Port‑Rouge</em>. Chaque étape dure ~10 minutes. Aucun jet de dés ; le MJ décide des issues selon les
+            choix des joueurs et leurs compétences raciales.</p>
     </div>
 
+    <!-- 5 Interactions avant la première ville -->
+    <div class="section">
+        <h2>Pré‑départ – 5 Interactions</h2>
+        <ol>
+            <li>Rencontre avec le Gardien du Seuil – remise du cristal et exposition de la mission.</li>
+            <li>Choix du chemin initial – traverser la forêt dense ou longer la rivière (impact sur ressources).</li>
+            <li>Épreuve de confiance – les joueurs doivent décider qui porte le cristal en premier.</li>
+            <li>Observation d’un phénomène naturel – un orage magique qui peut être exploité par les compétences.</li>
+            <li>Première interaction avec un PNJ voyageur qui propose un indice crypté.</li>
+        </ol>
+        <p class="outcome">Le MJ fournit deux issues possibles pour chaque point afin de garder le libre‑arbitre.</p>
+    </div>
+
+    <!-- City sections with 5 interactions each -->
+    <div class="section city">
+        <h2>1️⃣ Novum‑Francis – 5 Interactions</h2>
+        <ol>
+            <li>Interaction principale : Le Gardien du Seuil remet le cristal.</li>
+            <li>Mini‑jeu "Le Pont Effondré" (déjà décrit).</li>
+            <li>Énigme du vieux phare – nécessite l’analyse scientifique (Francis).</li>
+            <li>Confrontation avec des bandits – Lamuisante peut mener le combat.</li>
+            <li>Découverte d’une source d’eau curative – Jewpiguer peut créer un récipient.</li>
+        </ol>
+    </div>
+
+    <div class="section transition">
+        <h2>Transition Novum‑Francis → Karta‑Kara – 5 Interactions</h2>
+        <ol>
+            <li>Traversée du sentier boueux – choix entre construire un pont ou contourner.</li>
+            <li>Rencontre avec un ermite qui propose un défi de logique.</li>
+            <li>Observation d’une créature rare qui peut être étudiée (Francis).</li>
+            <li>Événement météo soudain – tempête acide, nécessite télékinésie (Cuckure).</li>
+            <li>Découverte d’un artefact abandonné qui peut être utilisé plus tard.</li>
+        </ol>
+    </div>
+
+    <div class="section city">
+        <h2>2️⃣ Karta‑Kara – 5 Interactions</h2>
+        <ol>
+            <li>Interaction principale : Dojo Fantôme – défi de combat coopératif.</li>
+            <li>Mini‑jeu "L’Embuscade du Vase" (déjà décrit).</li>
+            <li>Énigme des statues mouvantes – nécessite télékinésie ou force physique.</li>
+            <li>Marché local – les joueurs peuvent négocier des informations.</li>
+            <li>Rituel de purification d’un puits contaminé – Francis analyse la toxine.</li>
+        </ol>
+    </div>
+
+    <div class="section transition">
+        <h2>Transition Karta‑Kara → Céphalis – 5 Interactions</h2>
+        <ol>
+            <li>Passage du marais toxique – choix de route ou utilisation de compétences.</li>
+            <li>Rencontre avec un guide tribal qui propose un test de confiance.</li>
+            <li>Découverte d’une ruine ancienne contenant un indice sur le Cœur du Monde.</li>
+            <li>Événement de feu soudain – nécessite création d’une barrière (Jewpiguer).</li>
+            <li>Interaction avec des créatures luminescentes qui offrent un raccourci.</li>
+        </ol>
+    </div>
+
+    <div class="section city">
+        <h2>3️⃣ Céphalis – 5 Interactions</h2>
+        <ol>
+            <li>Interaction principale : Audience avec Lady Valare – révélation du Cœur du Monde.</li>
+            <li>Mini‑jeu "Le Miroir Vivant" (déjà décrit).</li>
+            <li>Énigme de la bibliothèque souterraine – nécessite analyse scientifique.</li>
+            <li>Combat contre des gardiens mécaniques – Lamuisante peut mener l’assaut.</li>
+            <li>Construction d’un dispositif de signal – Jewpiguer crée un composant.</li>
+        </ol>
+    </div>
+
+    <div class="section transition">
+        <h2>Transition Céphalis → Usine‑Mère – 5 Interactions</h2>
+        <ol>
+            <li>Traversée d’un canyon de verre – choix de pont ou télékinésie pour déplacer des blocs.</li>
+            <li>Rencontre avec un ingénieur défaillant qui demande de l’aide.</li>
+            <li>Événement de tempête de sable – nécessite protection (Cuckure).</li>
+            <li>Découverte d’un réservoir d’énergie qui peut alimenter le bateau.</li>
+            <li>Mini‑quête pour récupérer une clé perdue dans les ruines.</li>
+        </ol>
+    </div>
+
+    <div class="section city">
+        <h2>4️⃣ Usine‑Mère – 5 Interactions</h2>
+        <ol>
+            <li>Interaction principale : Construction du bateau blindé (Jewpiguer).</li>
+            <li>Mini‑jeu "Fuite de la Coque" (déjà décrit).</li>
+            <li>Réparation d’un moteur défectueux – nécessite compétences mécaniques.</li>
+            <li>Affrontement avec des drones de surveillance – Lamuisante peut les neutraliser.</li>
+            <li>Collecte de ressources rares dans la zone industrielle.</li>
+        </ol>
+    </div>
+
+    <div class="section transition">
+        <h2>Transition Usine‑Mère → Port‑Rouge – 5 Interactions</h2>
+        <ol>
+            <li>Navigation à travers les courants acides – choix de route ou création de boucliers.</li>
+            <li>Rencontre avec un navire marchand qui propose un échange.</li>
+            <li>Tempête sous‑marine – nécessite télékinésie pour stabiliser le bateau.</li>
+            <li>Découverte d’un ancien phare sous‑marin contenant un indice.</li>
+            <li>Épreuve de morale : sauver des civils en péril ou poursuivre la mission.</li>
+        </ol>
+    </div>
+
+    <div class="section city">
+        <h2>5️⃣ Port‑Rouge – 5 Interactions</h2>
+        <ol>
+            <li>Interaction principale : Le Gardien du Seuil réapparaît – placement du cristal.</li>
+            <li>Mini‑jeu "Choix du Destin" (déjà décrit).</li>
+            <li>Confrontation finale avec le Seigneur Grakij – combat ou négociation.</li>
+            <li>Décision sur l’utilisation du cristal – sacrifice ou conservation.</li>
+            <li>Épilogue libre – les joueurs décrivent les conséquences de leur choix.</li>
+        </ol>
+    </div>
+
+    <!-- Boss Fight – 3 Phases -->
+    <div class="section">
+        <h2>Boss Final – Le Seigneur Grakij (3 Phases)</h2>
+        <p>Après l’interaction finale, le Seigneur Grakij révèle son vrai pouvoir. Le combat se déroule en trois phases
+            distinctes. Le MJ doit choisir l’issue de chaque phase en fonction des actions et des compétences des
+            joueurs.</p>
+        <h3>Phase 1 – Bouclier d’Ombre</h3>
+        <ul>
+            <li>Grakij invoque un bouclier d’énergie qui absorbe les premiers coups.</li>
+            <li>Options pour les PJ :
+                <ul>
+                    <li>Lamuisante tente de briser le bouclier par une attaque physique puissante.</li>
+                    <li>Cuckure utilise la télékinésie pour dévier l’énergie du bouclier.</li>
+                    <li>Francis analyse la fréquence du bouclier pour proposer une faiblesse.</li>
+                    <li>Jewpiguer crée un dispositif temporaire qui perturbe le champ énergétique.</li>
+                </ul>
+            <li class="outcome">Le MJ décide si le bouclier est affaibli (passage à la phase 2) ou si les PJ subissent
+                une perte de ressources (ex. : 10 % d’équipement).</li>
+        </ul>
+        <h3>Phase 2 – Tempête de Cendres</h3>
+        <ul>
+            <li>Grakij libère une tempête de cendres corrosives qui limite la visibilité.</li>
+            <li>Options pour les PJ :
+                <ul>
+                    <li>Cuckure crée un bouclier psychique pour protéger le groupe.</li>
+                    <li>Lamuisante guide les joueurs à travers le chaos avec des mouvements agiles.</li>
+                    <li>Francis identifie des points faibles dans la tempête pour créer un contre‑attaque.</li>
+                    <li>Jewpiguer matérialise un abri temporaire.</li>
+                </ul>
+            <li class="outcome">Le MJ décide si la tempête est dissipée (accès à la phase 3) ou si les PJ perdent du
+                temps (ajout de 2 minutes).</li>
+        </ul>
+        <h3>Phase 3 – L’Âme du Grakij</h3>
+        <ul>
+            <li>Grakij projette son essence dans un avatar spectral, augmentant ses dégâts.</li>
+            <li>Options pour les PJ :
+                <ul>
+                    <li>Lamuisante engage le combat corps à corps, cherchant à désarmer l’avatar.</li>
+                    <li>Cuckure tente de renverser l’énergie de l’avatar avec une poussée télékinétique.</li>
+                    <li>Francis exploite une faiblesse découverte lors de la phase 1 pour infliger un coup décisif.</li>
+                    <li>Jewpiguer crée une structure qui empêche l’avatar de se reformer.</li>
+                </ul>
+            <li class="outcome">Le MJ conclut le combat : victoire des PJ (fin de la campagne) ou défaite (conséquences
+                dramatiques à décrire).</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>Conseils au MJ</h2>
+        <ul>
+            <li>Chronométrez chaque grande section (~10 minutes). Ajustez le temps des sous‑interactions selon le
+                rythme.</li>
+            <li>Pour chaque interaction, proposez au moins deux issues possibles afin de garder le libre‑arbitre.</li>
+            <li>Utilisez les compétences raciales décrites dans le livret des races pour guider les résolutions.</li>
+            <li>Aucun jet de dés ; décidez de l’issue en fonction de la narration et des choix des joueurs.</li>
+        </ul>
+    </div>
+</body>
+
+</html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Guide MJ – La Route du Remède (Version étendue)</title>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: #f5f5f5;
+            color: #333;
+        }
+
+        h1,
+        h2,
+        h3 {
+            color: #2c3e50;
+        }
+
+        .section {
+            background: #fff;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .city {
+            border-left: 4px solid #3498db;
+            padding-left: 10px;
+        }
+
+        .transition {
+            border-left: 4px solid #e67e22;
+            padding-left: 10px;
+        }
+
+        ul {
+            margin: 0;
+            padding-left: 20px;
+        }
+
+        .outcome {
+            margin-top: 5px;
+            font-style: italic;
+            color: #555;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Guide du Maître du Jeu – La Route du Remède (Version étendue)</h1>
+    <div class="section">
+        <h2>Résumé du scénario (≈ 1 heure)</h2>
+        <p>Les PJ transportent le <strong>Crystal du Dernier Souffle</strong> de <em>Novum‑Francis</em> à
+            <em>Port‑Rouge</em>. Chaque étape dure ~10 minutes. Aucun jet de dés ; le MJ décide des issues selon les
+            choix des joueurs et leurs compétences raciales.
+        </p>
+    </div>
+
+    <!-- 5 Interactions avant la première ville -->
+    <div class="section">
+        <h2>Pré‑départ – 5 Interactions</h2>
+        <ol>
+            <li>Rencontre avec le Gardien du Seuil – remise du cristal et exposition de la mission.</li>
+            <li>Choix du chemin initial – traverser la forêt dense ou longer la rivière (impact sur ressources).</li>
+            <li>Épreuve de confiance – les joueurs doivent décider qui porte le cristal en premier.</li>
+            <li>Observation d’un phénomène naturel – un orage magique qui peut être exploité par les compétences.</li>
+            <li>Première interaction avec un PNJ voyageur qui propose un indice crypté.</li>
+        </ol>
+        <p class="outcome">Le MJ fournit deux issues possibles pour chaque point afin de garder le libre‑arbitre.</p>
+    </div>
+
+    <!-- City sections with 5 interactions each -->
+    <div class="section city">
+        <h2>1️⃣ Novum‑Francis – 5 Interactions</h2>
+        <ol>
+            <li>Interaction principale : Le Gardien du Seuil remet le cristal.</li>
+            <li>Mini‑jeu "Le Pont Effondré" (déjà décrit).</li>
+            <li>Énigme du vieux phare – nécessite l’analyse scientifique (Francis).</li>
+            <li>Confrontation avec des bandits – Lamuisante peut mener le combat.</li>
+            <li>Découverte d’une source d’eau curative – Jewpiguer peut créer un récipient.</li>
+        </ol>
+    </div>
+
+    <div class="section transition">
+        <h2>Transition Novum‑Francis → Karta‑Kara – 5 Interactions</h2>
+        <ol>
+            <li>Traversée du sentier boueux – choix entre construire un pont ou contourner.</li>
+            <li>Rencontre avec un ermite qui propose un défi de logique.</li>
+            <li>Observation d’une créature rare qui peut être étudiée (Francis).</li>
+            <li>Événement météo soudain – tempête acide, nécessite télékinésie (Cuckure).</li>
+            <li>Découverte d’un artefact abandonné qui peut être utilisé plus tard.</li>
+        </ol>
+    </div>
+
+    <div class="section city">
+        <h2>2️⃣ Karta‑Kara – 5 Interactions</h2>
+        <ol>
+            <li>Interaction principale : Dojo Fantôme – défi de combat coopératif.</li>
+            <li>Mini‑jeu "L’Embuscade du Vase" (déjà décrit).</li>
+            <li>Énigme des statues mouvantes – nécessite télékinésie ou force physique.</li>
+            <li>Marché local – les joueurs peuvent négocier des informations.</li>
+            <li>Rituel de purification d’un puits contaminé – Francis analyse la toxine.</li>
+        </ol>
+    </div>
+
+    <div class="section transition">
+        <h2>Transition Karta‑Kara → Céphalis – 5 Interactions</h2>
+        <ol>
+            <li>Passage du marais toxique – choix de route ou utilisation de compétences.</li>
+            <li>Rencontre avec un guide tribal qui propose un test de confiance.</li>
+            <li>Découverte d’une ruine ancienne contenant un indice sur le Cœur du Monde.</li>
+            <li>Événement de feu soudain – nécessite création d’une barrière (Jewpiguer).</li>
+            <li>Interaction avec des créatures luminescentes qui offrent un raccourci.</li>
+        </ol>
+    </div>
+
+    <div class="section city">
+        <h2>3️⃣ Céphalis – 5 Interactions</h2>
+        <ol>
+            <li>Interaction principale : Audience avec Lady Valare – révélation du Cœur du Monde.</li>
+            <li>Mini‑jeu "Le Miroir Vivant" (déjà décrit).</li>
+            <li>Énigme de la bibliothèque souterraine – nécessite analyse scientifique.</li>
+            <li>Combat contre des gardiens mécaniques – Lamuisante peut mener l’assaut.</li>
+            <li>Construction d’un dispositif de signal – Jewpiguer crée un composant.</li>
+        </ol>
+    </div>
+
+    <div class="section transition">
+        <h2>Transition Céphalis → Usine‑Mère – 5 Interactions</h2>
+        <ol>
+            <li>Traversée d’un canyon de verre – choix de pont ou télékinésie pour déplacer des blocs.</li>
+            <li>Rencontre avec un ingénieur défaillant qui demande de l’aide.</li>
+            <li>Événement de tempête de sable – nécessite protection (Cuckure).</li>
+            <li>Découverte d’un réservoir d’énergie qui peut alimenter le bateau.</li>
+            <li>Mini‑quête pour récupérer une clé perdue dans les ruines.</li>
+        </ol>
+    </div>
+
+    <div class="section city">
+        <h2>4️⃣ Usine‑Mère – 5 Interactions</h2>
+        <ol>
+            <li>Interaction principale : Construction du bateau blindé (Jewpiguer).</li>
+            <li>Mini‑jeu "Fuite de la Coque" (déjà décrit).</li>
+            <li>Réparation d’un moteur défectueux – nécessite compétences mécaniques.</li>
+            <li>Affrontement avec des drones de surveillance – Lamuisante peut les neutraliser.</li>
+            <li>Collecte de ressources rares dans la zone industrielle.</li>
+        </ol>
+    </div>
+
+    <div class="section transition">
+        <h2>Transition Usine‑Mère → Port‑Rouge – 5 Interactions</h2>
+        <ol>
+            <li>Navigation à travers les courants acides – choix de route ou création de boucliers.</li>
+            <li>Rencontre avec un navire marchand qui propose un échange.</li>
+            <li>Tempête sous-marine – nécessite télékinésie pour stabiliser le bateau.</li>
+            <li>Découverte d’un ancien phare sous-marin contenant un indice.</li>
+            <li>Épreuve de morale : sauver des civils en péril ou poursuivre la mission.</li>
+        </ol>
+    </div>
+
+    <div class="section city">
+        <h2>5️⃣ Port‑Rouge – 5 Interactions</h2>
+        <ol>
+            <li>Interaction principale : Le Gardien du Seuil réapparaît – placement du cristal.</li>
+            <li>Mini‑jeu "Choix du Destin" (déjà décrit).</li>
+            <li>Confrontation finale avec le Seigneur Grakij – combat ou négociation.</li>
+            <li>Décision sur l’utilisation du cristal – sacrifice ou conservation.</li>
+            <li>Épilogue libre – les joueurs décrivent les conséquences de leur choix.</li>
+        </ol>
+    </div>
+
+    <div class="section">
+        <h2>Conseils au MJ</h2>
+        <ul>
+            <li>Chronométrez chaque grande section (~10 minutes). Ajustez le temps des sous‑interactions selon le
+                rythme.</li>
+            <li>Pour chaque interaction, proposez au moins deux issues possibles afin de garder le libre‑arbitre.</li>
+            <li>Utilisez les compétences raciales décrites dans le livret des races pour guider les résolutions.</li>
+            <li>Aucun jet de dés ; décidez de l’issue en fonction de la narration et des choix des joueurs.</li>
+        </ul>
+    </div>
+</body>
+
+</html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Guide MJ – La Route du Remède</title>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: #f5f5f5;
+            color: #333;
+        }
+
+        h1,
+        h2,
+        h3 {
+            color: #2c3e50;
+        }
+
+        .section {
+            background: #fff;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .city {
+            border-left: 4px solid #3498db;
+            padding-left: 10px;
+        }
+
+        ul {
+            margin: 0;
+            padding-left: 20px;
+        }
+
+        .outcome {
+            margin-top: 5px;
+            font-style: italic;
+            color: #555;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Guide du Maître du Jeu – La Route du Remède</h1>
+    <div class="section">
+        <h2>Résumé du scénario (≈ 1 heure)</h2>
+        <p>Les PJ sont chargés d’acheminer le <strong>Crystal du Dernier Souffle</strong> depuis <em>Novum‑Francis</em>
+            jusqu’au <em>Cœur du Monde</em> sous <em>Port‑Rouge</em>. La Malédiction Grakij transforme la nature en
+            cauchemar mécanique. Le temps est compté : chaque étape dure environ 10 minutes de jeu.</p>
+        <p>Chaque ville propose une <strong>interaction principale</strong> et un <strong>mini‑jeu</strong>. Aucun jet
+            de dés n’est requis ; le MJ décide de l’issue en fonction des choix des joueurs, de leurs compétences
+            raciales et de la narration.</p>
+    </div>
+
+    <div class="section city">
+        <h2>1️⃣ Novum‑Francis – Le Départ</h2>
+        <h3>Interaction principale</h3>
+        <p>Le vieil homme (le Gardien du Seuil) remet le cristal et expose la mission.</p>
+        <h3>Mini‑jeu : "Le Pont Effondré"</h3>
+        <ul>
+            <li>Les joueurs doivent créer un passage. Options :
+                <ul>
+                    <li>Utiliser la <em>télékinésie</em> (Cuckure) pour soulever les troncs.</li>
+                    <li>Construire une passerelle improvisée (Jewpiguer).</li>
+                    <li>Chercher un détour naturel (Lamuisante ou Francis).</li>
+                </ul>
+                <div class="outcome">Le MJ choisit l’issue : passage réussi, détour (3 min supplémentaires) ou blocage
+                    qui force les PJ à improviser.</div>
+            </li>
+        </ul>
+    </div>
+
+    <div class="section city">
+        <h2>2️⃣ Karta‑Kara – L’Entraînement</h2>
+        <h3>Interaction principale</h3>
+        <p>Le Dojo Fantôme propose un défi de combat qui teste la coopération.</p>
+        <h3>Mini‑jeu : "L’Embuscade du Vase"</h3>
+        <ul>
+            <li>Des créatures surgissent du marais. Options :
+                <ul>
+                    <li>Lamuisante mène le combat direct.</li>
+                    <li>Francis analyse la toxine et crée un antidote rapide.</li>
+                    <li>Cuckure utilise la télékinésie pour repousser les ennemis.</li>
+                </ul>
+                <div class="outcome">Le MJ décide si les PJ éliminent la menace, la contournent ou subissent une perte
+                    de ressources (ex. : 10 % d’équipement).</div>
+            </li>
+        </ul>
+    </div>
+
+    <div class="section city">
+        <h2>3️⃣ Céphalis – La Révélation</h2>
+        <h3>Interaction principale</h3>
+        <p>Une audience avec Lady Valare révèle que le Cœur du Monde est sous Port‑Rouge.</p>
+        <h3>Mini‑jeu : "Le Miroir Vivant"</h3>
+        <ul>
+            <li>Un mirage copie les actions des PJ. Options :
+                <ul>
+                    <li>Lamuisante affronte son double.</li>
+                    <li>Francis utilise la science pour désactiver le reflet.</li>
+                    <li>Cuckure déplace le miroir avec la télékinésie.</li>
+                </ul>
+                <div class="outcome">Le MJ peut choisir que le miroir révèle un indice, crée une impasse, ou se brise,
+                    forçant les PJ à choisir un autre chemin.</div>
+            </li>
+        </ul>
+    </div>
+
+    <div class="section city">
+        <h2>4️⃣ Usine‑Mère – L’Armement</h2>
+        <h3>Interaction principale</h3>
+        <p>Les Jewpiguer construisent un bateau blindé pour la traversée océanique.</p>
+        <h3>Mini‑jeu : "Fuite de la Coque"</h3>
+        <ul>
+            <li>Une fissure s’ouvre sous l’acide. Options :
+                <ul>
+                    <li>Jewpiguer crée une plaque de réparation instantanée.</li>
+                    <li>Cuckure maintient l’eau à distance.</li>
+                    <li>Lamuisante organise la défense pendant la réparation.</li>
+                </ul>
+                <div class="outcome">Le MJ décide si la réparation tient (avancée rapide), si le bateau doit ralentir
+                    (perte de temps) ou si une nouvelle menace apparaît.</div>
+            </li>
+        </ul>
+    </div>
+
+    <div class="section city">
+        <h2>5️⃣ Port‑Rouge – Le Climax</h2>
+        <h3>Interaction principale</h3>
+        <p>Le Gardien du Seuil réapparaît, le cristal doit être placé dans le Cœur Brûlant.</p>
+        <h3>Mini‑jeu : "Choix du Destin"</h3>
+        <ul>
+            <li>Les PJ décident :
+                <ul>
+                    <li>Utiliser le cristal pour purifier le monde (sacrifice).</li>
+                    <li>Garder le pouvoir et risquer la malédiction.</li>
+                </ul>
+                <div class="outcome">Le MJ décrit les conséquences immédiates (fin de la partie) et laisse la discussion
+                    libre ; aucune solution unique n’est imposée.</div>
+            </li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>Conseils au MJ</h2>
+        <ul>
+            <li>Chronométrez chaque ville ≈ 10 minutes. Ajustez le temps des mini‑jeux selon le rythme du groupe.</li>
+            <li>Favorisez les réponses basées sur les compétences raciales décrites dans le livret des races.</li>
+            <li>Ne lancez aucun dé ; décidez de l’issue en fonction de la narration et du choix des joueurs.</li>
+            <li>Laissez toujours au moins deux issues possibles pour chaque interaction afin de préserver le
+                libre‑arbitre.</li>
+        </ul>
+    </div>
 </body>
 
 </html>
